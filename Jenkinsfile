@@ -36,6 +36,7 @@ pipeline {
                                          sh '''
                                              # Clone the test2 repository
                                               echo "repo cloning started"
+                                             rm -rf test5
                                              git clone https://github.com/SDMahalle/test5.git
                                              cd test5
                                              echo "navigated to test 4"
