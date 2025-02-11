@@ -51,8 +51,8 @@ pipeline {
                                                                 ls -l pom.xml
                                                                # Updating version using sed
                                                                 def newVersion = '1.1-SNAPSHOT'
-                                                                                   sh "mvn versions:set -DnewVersion=${newVersion}"
-                                                                                   sh "mvn versions:commit"
+                                                                                    mvn versions:set -DnewVersion=${newVersion}
+                                                                                    mvn versions:commit
                                                                # Verify sed operation success
                                                                 grep "1.1-SNAPSHOT" pom.xml
                                              echo "updated pom version"
