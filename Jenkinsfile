@@ -62,7 +62,7 @@ pipeline {
                                              git add pom.xml
                                              git commit -m "Update pom.xml version"
                                              echo "commit updated pom.xml"
-                                             git push origin main
+                                             git push
                                              echo "push updated pom.xml"
                                          '''
                                      }
