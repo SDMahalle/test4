@@ -36,9 +36,9 @@ pipeline {
                                          sh '''
                                              # Clone the test2 repository
                                               echo "repo cloning started"
-                                             git clone git@github.com:SDMahalle/test3.git
-                                             cd test3
-                                             echo "navigated to test 3"
+                                             git clone https://github.com/SDMahalle/test4.git
+                                             cd test4
+                                             echo "navigated to test 4"
                                              # Checkout the main branch
                                              git checkout main
                                              echo "checked out main branch"
