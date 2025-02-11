@@ -6,13 +6,33 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'npm install'
+                echo "Build Started"
             }
         }
         stage('Test') {
             steps {
-                sh './jenkins/scripts/test.sh'
+                sh 'Test Execution Started'
             }
         }
+        stage('Deliver for development') {
+                    when {
+                        branch 'development'
+                    }
+                    steps {
+                        echo "Deliver for development"
+                        input message: 'Finished using the web site? (Click "Proceed" to continue)'
+                        echo "Delivery for developement end"
+                    }
+                }
+                stage('Deploy for production') {
+                    when {
+                        branch 'production'
+                    }
+                    steps {
+                        echo "Deliver for production"
+                                               input message: 'Finished using the web site? (Click "Proceed" to continue)'
+                                               echo "Delivery for production end"
+                    }
+                }
     }
 }
