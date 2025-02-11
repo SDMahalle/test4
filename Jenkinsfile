@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'Test Execution Started'
+                echo "Test Execution Started"
             }
         }
         stage('Deliver for development') {
