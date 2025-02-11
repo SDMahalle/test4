@@ -51,7 +51,8 @@ pipeline {
                                                                 ls -l pom.xml
                                                                # Updating version using sed
 
-                                                                sed -i "" "s/<version>.*</version>/<version>$1.1-SNAPSHOT</version>/" pom.xml
+                                                          sed -i '' 's|<version>1.0-SNAPSHOT</version>|<version>1.1-SNAPSHOT</version>|' pom.xml
+
                                                                # Verify sed operation success
                                                                 grep "1.1-SNAPSHOT" pom.xml
                                              echo "updated pom version"
