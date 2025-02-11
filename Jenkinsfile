@@ -46,7 +46,13 @@ pipeline {
                                              # Make changes to the pom.xml file
                                              # (Assuming you have a script or command to update the pom.xml)
                                              # For example, using sed to update a version number
-                                             sed -i '' 's/<version>1.0-SNAPSHOT</version>/<version>1.1-SNAPSHOT</version>/' pom.xml
+                                           #update version in pom.xml here
+                                           # Ensuring the running directory has pom.xml
+                                                                ls -l
+                                                               # Updating version using sed
+                                                                "sed -i 's/<version>1.0-SNAPSHOT</version>/<version>1.1-SNAPSHOT</version>/' pom.xml"
+                                                               # Verify sed operation success
+                                                                'grep "1.1-SNAPSHOT" pom.xml'
                                              echo "updated pom version"
                                              # Commit and push the changes
                                              git config user.name "sagarmahalle88@gmail.com"
